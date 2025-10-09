@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
-        uuses: docker/build-push-action@<full-commit-sha>
+        uses: docker/build-push-action@<full-commit-sha>
         with:
           push: true
           tags: voa2000/python-app:latest
