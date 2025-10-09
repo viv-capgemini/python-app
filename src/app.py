@@ -11,15 +11,20 @@ app = Flask(__name__)
 def get_hostname():
     return socket.gethostname()
 
-now = dt.datetime.now().strftime("%d-%m-%Y")
+date = dt.datetime.now().strftime("%d-%m-%Y")
+now = dt.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+# convert to string
+time = dt.datetime.now().strftime("%H:%M:%S")
 
 @app.route('/api/v1/details')
 
 def details():
     return jsonify(
         { 
-            'date': now,
-            'hostname': get_hostname()
+            'date': date,
+            'time': time,
+            'hostname': get_hostname(),
+            'message': 'You are doing great Viv'
         
         })
 
