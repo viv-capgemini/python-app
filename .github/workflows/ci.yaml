@@ -1,11 +1,7 @@
 name: ci
 
 on:
-  push:
-    paths:
-      - src/**
-    branches:
-      - master  
+  push: 
 
 jobs:
   docker:
