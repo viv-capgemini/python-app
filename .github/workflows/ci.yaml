@@ -2,6 +2,10 @@ name: ci
 
 on:
   push:
+    paths:
+      - src/**
+    branches:
+      - master  
 
 jobs:
   docker:
@@ -24,4 +28,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: voa2000/python-app:latest
+          tags: voa2000/python-app:${{ github.sha }}
