@@ -15,8 +15,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Extract short SHA
-        id: vars
-        run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        shell: bash
+        run: |
+          echo "COMMIT_ID=${GITHUB_SHA::6}" >> "$GITHUB_ENV"
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -28,4 +29,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: voa2000/python-app:${SHORT_SHA}
+          tags: voa2000/python-app:${{ env.COMMIT_ID}}
