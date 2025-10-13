@@ -14,20 +14,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: Extract short SHA
+        id: vars
+        run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
-      - name: Get short SHA
-        run: echo "SHORT_SHA=$("${{ github.sha }}".SubString(0, 8))" >> $env:GITHUB_ENV
-
-      - name: Print short SHA
-        run: echo "Short SHA is ${{ env.SHORT_SHA }}"  
       -
         name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: voa2000/python-app:${{ github.sha }}
+          tags: voa2000/python-app:${SHORT_SHA}
