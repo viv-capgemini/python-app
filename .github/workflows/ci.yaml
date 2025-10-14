@@ -34,3 +34,5 @@ jobs:
         with:
           push: true
           tags: voa2000/python-app:${{ env.COMMIT_ID}}
+          tags: voa2000/python-app:latest
+
