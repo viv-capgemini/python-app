@@ -24,7 +24,7 @@ def details():
             'date': date,
             'time': time,
             'hostname': get_hostname(),
-            'message': 'You are doing great Viv'
+            'message': 'GitHub/DockerHub'
         
         })
 
