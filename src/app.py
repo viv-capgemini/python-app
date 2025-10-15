@@ -1,5 +1,5 @@
 #'/api/v1/details'
-#'/api/v1/healthz'
+#'/api/v1/healthz  '
 
 from flask import Flask, jsonify
 import socket
