@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: voa2000/backstage
   pullPolicy: IfNotPresent
-  tag: app-v3
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: ""
