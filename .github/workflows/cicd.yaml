@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  Continuous Integration:
+  Continuous_Integration:
     runs-on: self-hosted
     steps:
       -
@@ -37,7 +37,7 @@ jobs:
             voa2000/python-app:${{ env.COMMIT_ID}}
             voa2000/python-app:latest
 
-  Continuous Delivery:
+  Continuous_Delivery:
     runs-on:  self-hosted
     steps:
       - name: Argocd app sync
