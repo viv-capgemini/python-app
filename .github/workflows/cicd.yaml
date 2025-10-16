@@ -39,11 +39,12 @@ jobs:
 
   Continuous_Delivery:
     runs-on:  self-hosted
+    need: Continuous_Integration
     steps:
       - name: Argocd app sync
         shell: bash
         run: |
-          argocd login argocd.test.com \
+          argocd login argocd-server.argo \
           --insecure \
           --grpc-web -\
           --username admin -\
