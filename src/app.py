@@ -16,16 +16,16 @@ now = dt.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 # convert to string
 time = dt.datetime.now().strftime("%H:%M:%S")
 
-@app.route('/api/v1/details')
+@app.route('/api/v1/info')
 
-def details():
+def info():
     return jsonify(
         { 
             'date': date,
             'time': time,
             'hostname': get_hostname(),
             'message': 'GitHub/DockerHub mixed up solved',
-            'travelled': 'Amsterdam Marathon Day 0/5'
+            'deployed_on': 'Kubernates'
         
         })
 
