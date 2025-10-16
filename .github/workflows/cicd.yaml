@@ -52,7 +52,7 @@ jobs:
           yq -Yi '.image.tag = '"${{needs.Continuous_Integration.outputs.commit_id}}" charts/python-app/values-argo.yaml'
 
       - name: Commit changes
-        use: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v9
         with:
           message: "Updates value yaml with commit ID"
       
