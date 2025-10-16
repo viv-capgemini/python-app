@@ -36,7 +36,7 @@ jobs:
           tags: |
             voa2000/python-app:${{ env.COMMIT_ID}}
             voa2000/python-app:latest
-  outputs:
+    outputs:
       commit_id: ${{ env.COMMIT_ID}}
 
   Continuous_Delivery:
