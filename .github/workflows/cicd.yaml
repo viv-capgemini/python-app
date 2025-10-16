@@ -39,7 +39,7 @@ jobs:
 
   Continuous_Delivery:
     runs-on:  self-hosted
-    need: Continuous_Integration
+    needs: Continuous_Integration
     steps:
       - name: Argocd app sync
         shell: bash
