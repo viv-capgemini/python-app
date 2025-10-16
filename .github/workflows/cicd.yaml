@@ -44,14 +44,14 @@ jobs:
     needs: Continuous_Integration
 
     steps:
-      - name: modify values file
+      - uses: actions/checkout@v3
+
+      - name: Modify values file
         shell: bash
         run: |
           echo ${{needs.Continuous_Integration.outputs.commit_id}}
-          sudo add-apt-repository ppa:rmescandon/yq
-          sudo apt update
-          sudo apt install yq
-          yq -i '.image.tag = "${{ needs.Continuous_Integration.outputs.commit_id }}"' charts/python-app/values-argo.yaml
+          pip install yq
+          yq -Yi '.image.tag = "${{needs.Continuous_Integration.outputs.commit_id}}"' charts/python-app/values.yaml
       
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
