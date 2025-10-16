@@ -44,7 +44,7 @@ jobs:
     needs: Continuous_Integration
 
     steps:
-      - noame: modify values file
+      - name: modify values file
         shell: bash
         run: |
           echo ${{needs.Continuous_Integration.outputs.commit_id}}

@@ -25,7 +25,7 @@ def details():
             'time': time,
             'hostname': get_hostname(),
             'message': 'GitHub/DockerHub mixed up solved',
-            'travelled': 'Amsterdam Marathon Day 1/5'
+            'travelled': 'Amsterdam Marathon Day 0/5'
         
         })
 
