@@ -44,14 +44,14 @@ jobs:
       - name: Install argocd into container
         shell: bash
         run: |
-          curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-          sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
-          rm argocd-linux-amd64
-          
+          curl -ksSL -o argocd https://argocd-server.argo/download/argocd-linux-amd64
+          chmod +x argocd
+          sudo mv ./argocd /usr/local/bin/argocd
+
       - name: Argocd app sync
         shell: bash
         run: |
-          argocd login argocd-server.argo \
+          argocd login https://argocd-server.argo \
           --insecure \
           --grpc-web -\
           --username admin -\
