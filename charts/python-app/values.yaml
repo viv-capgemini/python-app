@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: voa2000/python-app
   pullPolicy: IfNotPresent
-  tag: cc1447
+  tag: 6fcad9
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
