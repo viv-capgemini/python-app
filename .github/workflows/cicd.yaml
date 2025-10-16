@@ -36,11 +36,20 @@ jobs:
           tags: |
             voa2000/python-app:${{ env.COMMIT_ID}}
             voa2000/python-app:latest
+  outputs:
+      commit_id: ${{ env.COMMIT_ID}}
 
   Continuous_Delivery:
     runs-on:  self-hosted
     needs: Continuous_Integration
+
     steps:
+      - noame: modify values file
+        shell: bash
+        run: |
+          echo ${{needs.Continuous_Integration.outputs.commit_id}}
+          pip install yq
+
       - name: Install argocd into container
         shell: bash
         run: |
