@@ -24,7 +24,7 @@ def info():
             'date': date,
             'time': time,
             'hostname': get_hostname(),
-            'message': 'GitHub/DockerHub mixed up solved',
+            'message': 'GitHub/DockerHub mixed up solved,again in Helm chart',
             'deployed_on': 'Kubernates'
         
         })

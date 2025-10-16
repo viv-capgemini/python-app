@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: voa2000/backstage
+  repository: voa2000/python-app
   pullPolicy: IfNotPresent
   tag: cc1447
 imagePullSecrets: []
